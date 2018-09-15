@@ -1,0 +1,115 @@
+# Biblatex
+#+LATEX_HEADER: \usepackage[backend=biber,authordate, ibidtracker=context,natbib,doi=false,isbn=false,url=false]{biblatex-chicago}
+#+LATEX_HEADER: \addbibresource{~/Documents/bibliography/references.bib}
+
+# Line spacing
+#+LATEX_HEADER: \usepackage{setspace}
+#+LATEX_HEADER: \onehalfspacing
+
+# Abbreviations
+#+LATEX_HEADER: \newcommand{\Su}[1]{\citep[p.~#1]{clark16_surfin_uncer}} 
+# Title etc.
+#+LATEX_HEADER: \author{Conrad Friedrich}
+#+OPTIONS: toc:nil num:t author:nil subtitle:nil
+#+TITLE: Intentional Action and Predictive Processing
+#+SUBTITLE: XxXx words
+
+
+- Reconstruct what an intention, intentional action is in the philosophical literature
+  - Anscombe
+  - Davidson
+  - Searle
+  - Bratman
+  - Frankfurt
+
+- Reconstruct Predictive Processing framework: need to understand bits and bobs to properly place intention
+  - Clark
+  - Friston
+
+- Place intention!
+
+- voila.
+
+
+* Introduction
+- need to of course take into account action
+- of course, field to broad to give an adequate overview. instead, highlight aspects deemed relevant to discuss predictive processing.
+** TODO A word about methodology - how do conceptual analysis of natural language and theories about cognitive science fit together?
+* TODO Intentions in Philosophy
+Intentions are intuitively meaningful ascriptions of a person, which we naturally use in everyday conversation. Intentions signify the difference of myself /doing/ something or that thing merely /happening/ to me. Things get a bit more complicated, though, once we try to pin down the exact boundaries and cases of the concept. Let's look briefly at some of the distinctions, problems and arguments . 
+
+There are two central questions in the discussions which purport to be relevant here:
+1. What is the relation of intention and action?
+2. What is the relation of intention and mental states, like propositional attitudes?
+
+As to question (1), Elizabeth citet:anscombe57_inten influentially offered to disambiguate the relation of intention and action into three different use cases in normal, pre-theoretic discourse: Cases where (i) an agent intends to \phi, where (ii) the agent \(\phi\)s intentionally, and where (iii) the agent \(\psi\) with the intention of \phi-ing citep:wilson16_action, where \phi and \psi stand in for action descriptions. In case (i), an agent might merely intend to \phi, but never come around and actually do it, whether she decides otherwise or something comes up that prohibits her from doing so. For example, I intend to finish this paper on time. In case (ii), \phi-ing is what she does /and/ what she is intending. For example, I'm typing these words intentionally. The object of her intention and her current action coincide. In case (iii), these two come apart: She \(\psi\)s with the further intention to \phi. For example, I'm writing these words with the intention to write a paper (Examples borrowed from citet:sep-intention). For Anscombe, a successful analysis of the concept of intention should account for all three usages. It is noteworthy that in each case, intention is directed at the future. The degree to which this is the case can differ markedly, as e.g. in case (ii), which is directed at something like the rolling present or the very near future. 
+
+It is quite obvious already, then, that intentions cannot be completely reduced to action, since there are plausible cases of intentions without actions. 
+
+Now, what is it to act intentionally? What does that mean? 
+
+A natural answer is that intentions /cause/ their intended action. They give a reason as to why the agent acted that way. This /causalist/ position is argued for by, e.g., citet:davidson63_action_reason_causes. citet:anscombe57_inten is the canonical representative of an /anti/-causalist position which essentially denies a causally relation between intention and action. The causalist gives a straightforward, intuitive picture of how intention and action might relate, but is open to important objections, notably: Causal chains can be devious. Even though I intend an action, my intention involuntarily might cause another action, which then causes me to act as originally intended. For example, ``A climber might want to rid himself of the weight and danger of holding another man on a rope, and he might know that by loosening his hold on the rope he could rid himself of the weight and danger. This belief and want might so unnerve him as to cause him to loosen his hold, and yet it might be the case that he never chose to loosen his hold, nor did he do it intentionally.'' citep:bonicalzi_agenc_mental_repres. Here, there is a direct causal chain from what reasonably might be described as an intention on part of the climber to the intended action, although the action was not intentional. The action is not connected to the intention in /the right way/. 
+
+To address this problem, citet:searle83_inten distinguishes prospective intention and intention in action. A prospective intention precedes an intentional action, whereby an intention in action occurs simultaneous with the action. Both appear in a planned intentional action, while only the latter is present in a spontaneous action. But how does this counter the case of the deviant causal chain? Searle requires the intention in action to be present throughout the bodily movement that constitutes the action. The intention is a supporting cause throughout the movement. If this is not the case, then the action cannot be counted as intentional. And this is exactly what happens when the climber is so unnerved as to loosen his grip, which is not supported throughout by an intention. 
+
+
+As to the question (2) regarding the relation of intention and mental state, an important distinction in the literature is whether to identify or, at least, intimately relate ascriptions of intentions with ascriptions of certain mental states. For the moment, the concern is just with propositional attitudes as mental states, although there are, of course, other mental states. Propositional attitudes describe states of an agent which are directed towards a proposition, expressed by sentences of the form `She believes that /p/', where /p/ stands for a proposition. [[citet:anscombe57_inten][\S 32]] gives an important difference between propositional attitudes: They might have a mind-to-world or world-to-mind /direction of fit/. Beliefs, as they tend to represent the world, fit their representation to the world. Desires strive to fit the world according to their content. Intentions, conceived as mental states, apparently fall into the second category, they seem to have world-to-mind direction of fit. But not trivially so, as the case of Oedipus makes salient. Oedipus intended to marry Jocasta and not his mother. Yet the difference between both descriptions is his ignorance: Just a simple belief missing, and beliefs have mind-to-world direction of fit. 
+
+But intending to \phi implies more than just desiring to \phi: There is a certain level of commitment evolved, deliberation on whether to \phi is over, as citet:Bratman1987-BRAIPA describes it.
+
+The position that intentions consist in or are determined by propositional attitudes can be addressed as /cognitivism/ expressing that intentions are thus higher, semantically transparent cognitive states. citet:velleman89_pract_reflec, for example, may be categorized as a /strong/ cognitivist citep:sep-intention, as he holds that intentions are nothing but particular beliefs about actions. [[citet:velleman89_pract_reflec][p. 109]] states that intentions are ‘self-fulfilling expectations that are motivated by a desire for their fulfillment and that represent themselves as such’ [[citep:wilson16_action][p. 22]]. An argument in favor of this position is that it gives a ready explanatation of the claim that generally, an intentionally \phi-ing is accompanied by knowledge that one is \phi-ing, put forward by, citet:anscombe57_inten[fn::Anscombe adds to this that the knowledge is gained without observation, but I leave this rather controversial claim out of the picture for now. Interestingly, citet:sep-intention attributes an anti-cognitivist stance to Anscombe.] And since intentions already consist in beliefs, we'd just have to argue for their justification to ascribe knowledge. In some sense, then, this position is /reductive/: Intentions are reduced to mental states, and talk about intentions just is a useful shorthand for when we actually mean certain types of propositional attitudes. 
+
+citet:Bratman1987-BRAIPA opposes cognitivism. He puts forward a couple of arguments, centering around the idea that intentions serve functions which aren't readily explained by appeal to beliefs and desires. One example of his arguments is that, roughly, intentions strongly motivate, while desires might be overridden, somewhat analogous to the philosophical distinction of /ultima facie/ reasons (intentions) and /prima facie/ (desires) reasons. This leaves something unexplained, which would be better served by explaining intentions as ``psychologically real and not reducible to desire-belief complexes'' [[citep:wilson16_action][p. 32]].  
+
+citet:pacherie00_conten_inten argues against cognitivism and for intentions as irreducible, too. She also helpfully distinguishes between three types of intentions, future-directed (distal) intentions, present-directed (proximal) intentions and motor intentions. They descrease (in the listed order) in generality and complexity. Also, motor intentions tend to not share the same representability as a propositon. In Searle's terms, the distal intentions might correspond to prospective intentions, while the intention in action might share features of both proximal and motor intentions.
+
+Of course, this is just a simplifying snapshot of some issues concerning intentions. There is, for example, a whole debate around whether you can \phi intentionally without intending to \phi (as, e.g., nananana citet:Bratman1987-BRAIPA notes). There is also no discussion of the rationality of intentions, or whether and how intentions relate to self-knowledge. There are all sorts of further complications and puzzles (as, for example, citet:pacherie_action_theor surveys) but only so little space in this paper.
+
+
+
+- Signpost :: Here goes some signposting text 
+Make use of distintictions distal, proximal, motor intentions
+* Predictive Processing
+
+** What is it? What are the core ideas?
+** What is all this hierarchy talk? Maybe fill in with concrete example
+- One advantage of hierarchy: encodes conditional independence of properties of objects represented cite:wiese17_vanil_pp_philos 
+** Add action to the mix: active inference
+- Two ways of prediction-error can be minimised: either the system can update the parameters of its inner models,
+in order to generate new predictions about what is causing the incoming sensory data (perceptual
+inference), or it can keep its generative model fixed, and resample the world such that the incoming
+sensory data accords with the predictions (active inference). cite:burr17_embod_decis_predic_brain  
+
+- Although both play an important role in PP, for Clark, the primary role of perceptual inference
+** General discussion of framework: advantages / objections
+- Stress unifying power  cite:wiese17_vanil_pp_philos pp18 
+- Standard critiques of PP by Koch etc. (see \Su{xXXXxx})
+- 
+* Intentions in Predictive Processing
+- Direction of fit mirrored in PP (cite:anscombe57_inten, cite:green17_speec_acts) \Su{123}
+- cite:friston11_action_under_activ_infer p. 138 describe that in the PP the disctintion between sensory and motor representation vanishes, percepts and intents
+- problems for higher-level cognition (intention with propositional content) as it is not clear how to find a direct correlate.
+- Direction of fit make correspond to beliefs, desires, where fit intentions in? the process of choosing the right action itself?
+- "A mental representation of the intended effect of an action is the cause of the action" - mental states are causes of action. intentional action is then a worldly state that was brought about by a corresponding mental representation. deviant causal chain are then intended insofar all points of the trajectory where predicted, too! If something happens unbeknownst to the agent then whatever.
+- the dark-room problem
+- Mismatch of revising prediction and action both as a way to get rid of prediction error. Why not just revise when mismatch? what elicits the action? cite:klein18_what_do_predic_coder_want
+- Answer cite:hohwy13_predic_mind : Its with the attention thingy: Desire-like predictions have high precision and are therefore hard to revise
+- But still doesn't explain why that action and not another action
+- Answer: innate beliefs that expect lit vs. dark rooms
+ In PP, a future goal-state is essentially a higher-level prediction used as a means of enabling action through the reduction of proprioceptive prediction-error (i.e. Active Inference) cite:burr17_embod_decis_predic_brain
+- One of the specific claims made by Cisek and Pastor-Bernier is that, as part of the competitive
+process, the brain is simultaneously specifying and selecting among representations of multiple action
+opportunities or affordances, which compete within the sensorimotor system itself (Cisek and Pas-
+tor-Bernier 2014).
+- This could be used to elevate the account to something akin to the non-cognitivist pictures as here intentions are not a special kind of belief but instead primitive
+- Hohwy more the cognitivist, clark more the embodied dude
+- A lot of it hinges on whether we can apply folk psychological discourse. cite:dewhurst17_folk_psych_bayes_brain complete reduction: one way. Pylyshyn argument that folk psychology is important? Because of high systematicity and explanatory power cite:pylyshyn86_comput_cognit. Ascribing beliefs, desires, intentions in propositional form go a very long way to help us explain and understand the behaviour and actions of people. (Give example involving long term planning maybe)
+-  
+** Short-term only so far! Few long term approaches (planning etc.)
+ How does the brain select, from the wide range of action opportunities, the sequence that most effectively leads to the satisfaction of some distal (possibly abstract) goal representation?
+** Rescorla: Eliminativist / Reductivist stance
+** which philosophical position is that closest to?
+* Conclusion 
+
+
+\printbibliography{}
