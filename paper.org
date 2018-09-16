@@ -10,32 +10,15 @@
 #+LATEX_HEADER: \newcommand{\Su}[1]{\citep[p.~#1]{clark16_surfin_uncer}} 
 # Title etc.
 #+LATEX_HEADER: \author{Conrad Friedrich}
-#+OPTIONS: toc:nil num:t author:nil subtitle:nil
+#+OPTIONS: toc:t num:t author:nil subtitle:nil
 #+TITLE: Intentional Action and Predictive Processing
 #+SUBTITLE: XxXx words
-
-
-- Reconstruct what an intention, intentional action is in the philosophical literature
-  - Anscombe
-  - Davidson
-  - Searle
-  - Bratman
-  - Frankfurt
-
-- Reconstruct Predictive Processing framework: need to understand bits and bobs to properly place intention
-  - Clark
-  - Friston
-
-- Place intention!
-
-- voila.
-
-
+\newpage
 * Introduction
 - need to of course take into account action
 - of course, field to broad to give an adequate overview. instead, highlight aspects deemed relevant to discuss predictive processing.
 ** TODO A word about methodology - how do conceptual analysis of natural language and theories about cognitive science fit together?
-* TODO Intentions in Philosophy
+* Intentions in Philosophy
 Intentions are intuitively meaningful ascriptions of a person, which we naturally use in everyday conversation. Intentions signify the difference of myself /doing/ something or that thing merely /happening/ to me. Things get a bit more complicated, though, once we try to pin down the exact boundaries and cases of the concept. Let's look briefly at some of the distinctions, problems and arguments . 
 
 There are two central questions in the discussions which purport to be relevant here:
@@ -65,16 +48,47 @@ citet:pacherie00_conten_inten argues against cognitivism and for intentions as i
 
 Of course, this is just a simplifying snapshot of some issues concerning intentions. There is, for example, a whole debate around whether you can \phi intentionally without intending to \phi (as, e.g., nananana citet:Bratman1987-BRAIPA notes). There is also no discussion of the rationality of intentions, or whether and how intentions relate to self-knowledge. There are all sorts of further complications and puzzles (as, for example, citet:pacherie_action_theor surveys) but only so little space in this paper.
 
-
-
 - Signpost :: Here goes some signposting text 
-Make use of distintictions distal, proximal, motor intentions
-* Predictive Processing
 
+* Predictive Processing
 ** What is it? What are the core ideas?
-** What is all this hierarchy talk? Maybe fill in with concrete example
-- One advantage of hierarchy: encodes conditional independence of properties of objects represented cite:wiese17_vanil_pp_philos 
+
+Predictive Processing is a term coined by Andy Clark addressing the question: /What/ do brains do (what is their function) citep:eliasmith07_how_to_build_brain. But what kind of framework is predictive processing? 
+citet:marr82_vision offered to distinguish theories of information-processing, like the brain, into three different levels. The computational, the algorithmic and the implementational level, where implementation actually concerns the hardware, an algorithm describes, roughly, the /How/ and the computational or functional level is concerned with the more abstract /What/, /Why/ and /What for/.  
+The framework can be applied to perception, cognition, and action and their interplay citep:wiese17_vanil_pp_philos. On Marr's taxonomy, the framework is chiefly employed on the computational and algorithmic level, but often with some idea as to neural implementation strategies or connection to empirical findings in neurophysiology.
+
+What does predictive processing claim about the brain, then?
+On the conventional picture of perception, the information flows from the world to sensory receptors through a hierarchy of neural feature detectors until reaching more abstract, cognitive facilities. The brain's role is that of a passive receptor, busily building up percepts out of raw sensory input. The higher up in the hierarchy, the more complex and abstract the contents. Predictive processing aspires to turn this conventional, passive, picture ``on its head'' \Su{51}, by developing that cognitive systems are ``constantly active, trying to predict [...] the streams of sensory stimulation before they arrive'' \Su{52}. The theory has two main components: By maintaining a complex, hierarchical, representation of the hidden causes of the world, the cognitive system constantly predicts the upcoming sensory input. What is fed forward in the brain, then, is not the raw sensory input, but instead the prediction errors as the mismatch of the prediction generated with the actual sensory input. If the predictions can be made more accurate than not, this is a strategy to compress the incoming data and significantly reducing the necessary information flow from the sensory organs. This compression strategy is called predictive coding and has more general application than in theories of perception. Its application in a cognitive system on all levels of a hierarchical model of the world constitutes, roughly, predictive processing as Clark proposes it. Key to this system is the ability of the brain to adapt its predictions by /minimizing prediction error/. 
+
+Instead of the conventional description of perception as /bottom-up/, that is, from sensory organs to higher cognitive functions, perception on the predictive processing view describes a complex interplay of mostly /top-down/ predictions and /bottom-up/ reports of prediction errors. 
+
+To see how this is supposed to work, let's look at the perception process in a bit more detail.
+
+A central aspect is the hierarchical inner model which generates the system's predictions. Usually embedded in a constant, changing flow, let's freeze the frame, so to speak, for a second. The world as presented to a cognitive system consists in complex, nested hierarchical structures. To understand the causal relationship and leverage opportunities to interact with the world, the predictions generated need to be fairly accurate. The system needs to get a grip, as Clark calls it \Su{20}. A claim of the framework is that the organizational structure of the brain in some way mirrors the complex causal structures in form of hierarchies that encode different levels of information. 
+
+A very short overview of how this process is meant to happen might be helpful. The levels of the hierarchy differ in how abstract---how removed from sensory input---the information is and operate at ``multiple spatial and temporal scales'' \Su{25}. Each level entertains a number of hypothesis about the lower level activity. If prediction is not successful, prediction error is generated and propagated up the hierarchy, where the predictions are adapted. This happens by selecting those hypotheses which minimize prediction error. Clark describes this process much more detail \Su{31f.}, but stays mostly on a conceptual level. Since prediction is inherently uncertain, it is a central part of the framework, however, that this process is approximating optimal Bayesian inference, that is, can be described by probabilistic models, in particular, hierarchical Bayesian models citep:orlanding_how_radic_predic_proces. From a computational standpoint, the hierarchical model is especially useful, since the structure encodes conditional independencies between parameters and thus simplifies calculations. In a sense, then, probabilistic dependencies are used to model causal dependencies in the world.[fn::Initially, I prepared a more detailed description of the principles of hierarchical Bayesian models but, to not obscure the central points, in the end ditched the rather technical exposition for the following examples.]
+
+** TODO MAYBE add talk about a HBM
+
+A single percept, say, a scene with a dog, is then represented across multiple levels of the hierarchy, with lower levels trying to account for simpler structures, like color patches, edges, etc., with medium levels concerned with more complex structures like, say, the dog, while higher level could represent more complex matters still and enable the percept of the whole scene. Clark coins the term ``multilevel cascade'' for the whole process, as predictions `cascade' down the hierarchy.
+
+Clark gives an example which helps to flesh out the overall picture:
+
+\begin{quote}
+Thus imagine you are kidnapped, blindfold, and taken to some unknown location. As the blindfolds are removed, your brain's first attempts at predicting the scene will surely fail. But rapidly processed, low spatial frequency cues soon get the predictive brain into the right general ballpark. Framed by these earle emerging gist elements [...] subsequent processing can be guided by specific mismatches with early attempts to fill the scene. These allow the system to progressively tune its top-down predictions, until it settles on a coherent overall interpretation pinning down details at many scales of space and time. \Su{42}
+\end{quote}
+
+
+Clark takes a radical citep:orlanding_how_radic_predic_proces turn from the passive type of perceptual (subpersonal) inference just described to what he and citet:friston11_action_under_activ_infer call /active inference/. This is the additional claim that action, too, can be explained with hierarchical models and minimization of prediction error. That is, the same general principles apply to both action and motor control as to cognition and perception. Instead of two conceptually and locally different processes, the framework aspires to explain the functions with one fell swoop. 
+
+What is that supposed to mean? This means there are two ways in which prediction error can be minimized: ``either the system can update the parameters of its inner models, in order to generate new predictions about what is causing the incoming sensory data (perceptual inference), or it can keep its generative model fixed, and resample the world such that the incoming sensory data accords with the predictions (active inference)'' citep:burr17_embod_decis_predic_brain. The brain employs the ``twin strategies of altering predictions to fit the world, and altering the world to fit predictions`` \Su{122}. That is, I move my arm down to minimize the dissonance between my prediction that my arm is down and the sensory input which reports it still up. At first glance, this runs counter to intuition. I certainly do not consciously predict my arm to be in that position, that sounds like hallucinating. And even if I did, why would I not instead update my predictions of where my arm is instead of actually moving it there? This seems much more economically reasonable. Actually, a lot hangs on this question for the placement of intentional action in the framework, and we will return to it in the next section. For now, note that first and foremost, the predictions relevant to motor control tend to concentrate on proprioception (sensory feedback on the position on one's limbs) instead of external sensory cues \Su{122}, which makes the competition with perceptual prediction less pressing.
+
+Why should we think that predictive processing is an empirically adequate theory?
+- Explanatory power in weird cases
+- Talk about empirical adequateness quite a bit! 
+- clear up relation to free energy principle (short)
 ** Add action to the mix: active inference
+
 - Two ways of prediction-error can be minimised: either the system can update the parameters of its inner models,
 in order to generate new predictions about what is causing the incoming sensory data (perceptual
 inference), or it can keep its generative model fixed, and resample the world such that the incoming
@@ -82,6 +96,7 @@ sensory data accords with the predictions (active inference). cite:burr17_embod_
 
 - Although both play an important role in PP, for Clark, the primary role of perceptual inference
 ** General discussion of framework: advantages / objections
+
 - Stress unifying power  cite:wiese17_vanil_pp_philos pp18 
 - Standard critiques of PP by Koch etc. (see \Su{xXXXxx})
 - 
